@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(25, 26, 25);
+}
+.main {
+  width: 400px;
+  height: 100vh;
+  background-color: #c8ae14;
+  text-align: center;
+  transform: translateX(-400px);
+  border-radius: 100% 100% 74% 10% / 0% 100% 0% 10%;
+}
+.main h1 {
+  padding-top: 100px;
+  margin-bottom: 50px;
+}
+ul li {
+  font-size: 24px;
+  list-style: none;
+  margin: 20px;
+}
+input {
+  display: none;
+}
+.toggole {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(243, 16, 16);
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  cursor: pointer;
+}
+.toggole .common {
+  width: 40px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.toggole .fir {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.toggole .sec {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.toggole .third {
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+input:checked + .toggole .fir {
+  transform: translate(-50%, 10px) rotate(45deg);
+}
+
+input:checked + .toggole .sec {
+  opacity: 0;
+}
+
+input:checked + .toggole .third {
+  transform: translate(-50%, -10px) rotate(-45deg);
+}
+input:checked ~ .main {
+  transform: translate(0);
+}
